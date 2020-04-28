@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Postscripts from './components/Postscripts';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    postscript: [
+      {
+        id: 1,
+        date: 'April 26, 2020',
+        post: 'I read that and that'
+      },
+
+      {
+        id: 2,
+        date: 'April 27, 2020',
+        post: 'I read this too'
+      },
+
+      {
+        id: 3,
+        date: 'April 28, 2020',
+        post: 'And this'
+      }
+    ]
+  }
+
+  render() {
+    console.log(this.state.postscript)
+    return (
+      <div className="App">
+        <h1>Your postscripts are here</h1>
+        <Postscripts postscript={this.state.postscript}/>
+      </div>
+    );
+  }
 }
 
 export default App;
