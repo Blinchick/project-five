@@ -3,9 +3,11 @@ import PostscriptItem from './PostscriptItem';
 
 class Postscripts extends Component {
     render() {
-        return this.props.postscript.map((post) => (
-            <PostscriptItem post={post} />
-        ));
+        return(
+        <h2>sup betches</h2>)
+        // return this.props.postscript.map((post) => (
+            // <PostscriptItem post={post} />
+        // ));
     }
 }
 

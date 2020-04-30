@@ -1,37 +1,52 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import firebase from './firebase';
 import './App.css';
 import Postscripts from './components/Postscripts';
+import Header from './components/layout/Header';
+import WritePost from './components/pages/WritePost'
 
 class App extends Component {
-  state = {
-    postscript: [
-      {
-        id: 1,
-        date: 'April 26, 2020',
-        post: 'I read that and that'
-      },
+  constructor() {
+    super();
+    this.state = {
+      postscript: ""
+    }
+  }
 
-      {
-        id: 2,
-        date: 'April 27, 2020',
-        post: 'I read this too'
-      },
+  componentDidMount() {
+    const dbRef = firebase.database().ref();
 
-      {
-        id: 3,
-        date: 'April 28, 2020',
-        post: 'And this'
+    dbRef.on('value', (response) => {
+      const newState = [];
+      const data = response.val();
+      for (let key in data) {
+        newState.push(data[key]);
       }
-    ]
+      this.setState({
+        postscript: newState
+      });
+    });
   }
 
   render() {
-    console.log(this.state.postscript)
+    console.log(this.state)
     return (
-      <div className="App">
-        <h1>Your postscripts are here</h1>
-        <Postscripts postscript={this.state.postscript}/>
-      </div>
+      <Router>
+        <div className="App">
+          <div className="container">
+            <Header />
+            <Route exact path="/" render={props => (
+              <React.Fragment>
+                <h1>Hello hello hello</h1>
+                {/* <Postscripts postscript={this.state.postscript} /> */}
+              </React.Fragment>
+            )} />
+            <Route path="/writepost" component={WritePost} />
+          
+          </div>
+        </div>
+      </Router>
     );
   }
 }

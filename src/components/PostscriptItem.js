@@ -4,8 +4,7 @@ class PostscriptItem extends Component {
     render() {
         return (
             <div>
-                <p>{this.props.post.date}</p>
-                <p>{this.props.post.post}</p>
+                <p>{this.props.post}</p>
             </div>
         )
     }
