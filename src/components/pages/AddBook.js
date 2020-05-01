@@ -4,18 +4,18 @@ import firebase from '../../firebase';
 //display form on a page for user to fill in
 //save new postscript into state
 //display newly added postscript in your "my postscripts page"
-//hook it up with firebase somehow
+//hook it up with firebase
+
 //bonus - add a preview???
 
-export class WritePost extends Component {
+export class AddBook extends Component {
     constructor(){
         super();
         this.state = {
             title: "",
             writer: "",
             publisher: "",
-            genre: "",
-            newPostscript: ""
+            genre: ""
         };
         //making 'this' to work in the callback
         this.handleChange = this.handleChange.bind(this);
@@ -35,22 +35,37 @@ export class WritePost extends Component {
         console.log(e);
         const newPost = firebase.database().ref();
 
+        //adding to firebase
         newPost.push({
-            
+            title: this.state.title,
+            writer: this.state.writer,
+            publisher: this.state.publisher,
+            genre: this.state.genre
+        });
+
+        //clearing state
+        this.setState({
+            title: "",
+            writer: "",
+            publisher: "",
+            genre: ""
         })
+        
     }
 
     render() {
         return (
             <React.Fragment>
                 <h2>Here you can create PostScript</h2>
-                    <form action="">
+                    <form action="" onSubmit={this.handleSubmit}>
                         <label htmlFor="title">Title</label>
-                        <input 
+                        <input
+                            id = "title"
                             type = "text" 
                             name = "title"
                             onChange = {this.handleChange}
                             value={this.state.title}
+                            required
                         />
 
                         <label htmlFor="writer">Writer</label>
@@ -59,6 +74,7 @@ export class WritePost extends Component {
                             name="writer"
                             onChange={this.handleChange}
                             value={this.state.writer}
+                            required
                         />
 
                         <label htmlFor="publisher">Publisher</label>
@@ -77,21 +93,11 @@ export class WritePost extends Component {
                             value={this.state.genre}
                         />
 
-                        <label htmlFor="newPostscript">Your Postscript</label>
-                        <textarea 
-                            name="newPostscript" 
-                            cols="50" 
-                            rows="10"
-                            onChange={this.handleChange}
-                            value={this.state.newPostscript}
-                        >
-                        </textarea>
-
-                        <input type="Submit" value="Create PostScript"/>
+                        <input type="Submit"/>
                     </form>
             </React.Fragment>
         )
     }
 }
 
-export default WritePost
+export default AddBook

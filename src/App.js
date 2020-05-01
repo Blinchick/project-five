@@ -1,49 +1,51 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import firebase from './firebase';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
-import Postscripts from './components/Postscripts';
 import Header from './components/layout/Header';
-import WritePost from './components/pages/WritePost'
+import AddBook from './components/pages/AddBook';
+import AllPosts from './components/pages/AllPosts';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      postscript: ""
-    }
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     postscript: ""
+  //   }
+  // }
 
-  componentDidMount() {
-    const dbRef = firebase.database().ref();
+  // componentDidMount() {
+  //   const dbRef = firebase.database().ref();
 
-    dbRef.on('value', (response) => {
-      const newState = [];
-      const data = response.val();
-      for (let key in data) {
-        newState.push(data[key]);
-      }
-      this.setState({
-        postscript: newState
-      });
-    });
-  }
+  //   dbRef.on('value', (response) => {
+  //     const newState = [];
+  //     const data = response.val();
+  //     for (let key in data) {
+  //       newState.push(data[key]);
+  //     }
+  //     this.setState({
+  //       postscript: newState
+  //     });
+  //   });
+  // }
 
   render() {
-    console.log(this.state)
     return (
       <Router>
         <div className="App">
           <div className="container">
             <Header />
+            <main>
             <Route exact path="/" render={props => (
-              <React.Fragment>
+              <section>
                 <h1>Hello hello hello</h1>
-                {/* <Postscripts postscript={this.state.postscript} /> */}
-              </React.Fragment>
+                <p>If you like to read, you probably have many things to say about books. Either you have strong opinion about character, story or just want to save your favourite quote - epilogue is here for you! </p>
+                <p>It's online book diary created for book lovers.</p>
+                <p>"A reader lives a thousand lives before he dies. The man who never reads lives only one."</p>
+              </section>
             )} />
-            <Route path="/writepost" component={WritePost} />
-          
+            <Route path="/addBook" component={AddBook} />
+            <Route path="/allposts" component={AllPosts} />
+            </main>
           </div>
         </div>
       </Router>
