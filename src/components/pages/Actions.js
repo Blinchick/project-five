@@ -10,9 +10,9 @@ function Actions(props) {
     }
 
     return (
-        <div>
+        <React.Fragment>
             <button onClick={deletePost}>DELETE</button>
-        </div>
+        </React.Fragment>
     )
 }
 

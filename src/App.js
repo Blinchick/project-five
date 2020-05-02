@@ -2,31 +2,10 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 import Header from './components/layout/Header';
-import AddBook from './components/pages/AddBook';
+import AddPost from './components/pages/AddPost';
 import AllPosts from './components/pages/AllPosts';
 
 class App extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     postscript: ""
-  //   }
-  // }
-
-  // componentDidMount() {
-  //   const dbRef = firebase.database().ref();
-
-  //   dbRef.on('value', (response) => {
-  //     const newState = [];
-  //     const data = response.val();
-  //     for (let key in data) {
-  //       newState.push(data[key]);
-  //     }
-  //     this.setState({
-  //       postscript: newState
-  //     });
-  //   });
-  // }
 
   render() {
     return (
@@ -43,7 +22,7 @@ class App extends Component {
                 <p>"A reader lives a thousand lives before he dies. The man who never reads lives only one."</p>
               </section>
             )} />
-            <Route path="/addBook" component={AddBook} />
+            <Route path="/addpost" component={AddPost} />
             <Route path="/allposts" component={AllPosts} />
             </main>
           </div>

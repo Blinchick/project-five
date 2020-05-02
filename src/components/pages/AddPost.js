@@ -7,15 +7,15 @@ import firebase from '../../firebase';
 //hook it up with firebase
 
 //bonus - add a preview???
+//bonus - add api w bookcovers and all those shits
 
-export class AddBook extends Component {
+export class AddPost extends Component {
     constructor(){
         super();
         this.state = {
             title: "",
             writer: "",
-            publisher: "",
-            genre: ""
+            postscript: ""
         };
         //making 'this' to work in the callback
         this.handleChange = this.handleChange.bind(this);
@@ -39,8 +39,7 @@ export class AddBook extends Component {
         newPost.push({
             title: this.state.title,
             writer: this.state.writer,
-            publisher: this.state.publisher,
-            genre: this.state.genre
+            postscript: this.state.postscript
         });
 
         //clearing state
@@ -55,7 +54,7 @@ export class AddBook extends Component {
 
     render() {
         return (
-            <React.Fragment>
+            <section>
                 <h2>Here you can create PostScript</h2>
                     <form action="" onSubmit={this.handleSubmit}>
                         <label htmlFor="title">Title</label>
@@ -77,27 +76,20 @@ export class AddBook extends Component {
                             required
                         />
 
-                        <label htmlFor="publisher">Publisher</label>
-                        <input
-                            type="text"
-                            name="publisher"
-                            onChange={this.handleChange}
-                            value={this.state.publisher}
-                        />
-
-                        <label htmlFor="genre">Genre</label>
-                        <input 
-                            type="text"
-                            name="genre"
-                            onChange={this.handleChange}
-                            value={this.state.genre}
-                        />
+                    <textarea
+                        name="postscript"
+                        cols="30"
+                        rows="5"
+                        onChange={this.handleChange}
+                        value={this.state.postscript}
+                    >
+                    </textarea>
 
                         <input type="Submit"/>
                     </form>
-            </React.Fragment>
+            </section>
         )
     }
 }
 
-export default AddBook
+export default AddPost

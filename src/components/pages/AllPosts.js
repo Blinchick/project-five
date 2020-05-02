@@ -12,7 +12,7 @@ export class AllPosts extends Component {
         // adding data from firebase to state
         super();
         this.state = {
-            allPosts: []
+            allPosts: [],
         }
     }
 
@@ -29,8 +29,7 @@ export class AllPosts extends Component {
                     postId: i,
                     title: data[i].title,
                     writer: data[i].writer,
-                    publisher: data[i].publisher,
-                    genre: data[i].genre
+                    postscript: data[i].postscript
                 });
 
                 this.setState({
@@ -44,16 +43,18 @@ export class AllPosts extends Component {
         const dbRef = firebase.database().ref();
         dbRef.off()
     }
+
     
     render() {
         return (
             <div>
                 {this.state.allPosts.map((post) => {
                     return (
-                        <div>
+                        <section>
                             <p>{post.title} by {post.writer}</p>
-                            <Actions post={post}/>
-                        </div>
+                            <p>{post.postscript}</p>
+                                <Actions post={post}/>
+                        </section>
                     )
                 })}
             </div>
