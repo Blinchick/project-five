@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/project-five/home/static/css/main.905c6a55.chunk.css",
-    "main.js": "/project-five/home/static/js/main.51de1896.chunk.js",
-    "main.js.map": "/project-five/home/static/js/main.51de1896.chunk.js.map",
-    "runtime-main.js": "/project-five/home/static/js/runtime-main.6164fd9a.js",
-    "runtime-main.js.map": "/project-five/home/static/js/runtime-main.6164fd9a.js.map",
-    "static/js/2.c3ce47c9.chunk.js": "/project-five/home/static/js/2.c3ce47c9.chunk.js",
-    "static/js/2.c3ce47c9.chunk.js.map": "/project-five/home/static/js/2.c3ce47c9.chunk.js.map",
-    "index.html": "/project-five/home/index.html",
-    "precache-manifest.9533a73c0ad676a8482441d5fe16785f.js": "/project-five/home/precache-manifest.9533a73c0ad676a8482441d5fe16785f.js",
-    "service-worker.js": "/project-five/home/service-worker.js",
-    "static/css/main.905c6a55.chunk.css.map": "/project-five/home/static/css/main.905c6a55.chunk.css.map",
-    "static/js/2.c3ce47c9.chunk.js.LICENSE.txt": "/project-five/home/static/js/2.c3ce47c9.chunk.js.LICENSE.txt",
-    "static/media/header1.jpg": "/project-five/home/static/media/header1.08f1750b.jpg"
+    "main.css": "/project-five/static/css/main.2d0642b4.chunk.css",
+    "main.js": "/project-five/static/js/main.fe2ec1e6.chunk.js",
+    "main.js.map": "/project-five/static/js/main.fe2ec1e6.chunk.js.map",
+    "runtime-main.js": "/project-five/static/js/runtime-main.61e38702.js",
+    "runtime-main.js.map": "/project-five/static/js/runtime-main.61e38702.js.map",
+    "static/js/2.caa6f99e.chunk.js": "/project-five/static/js/2.caa6f99e.chunk.js",
+    "static/js/2.caa6f99e.chunk.js.map": "/project-five/static/js/2.caa6f99e.chunk.js.map",
+    "index.html": "/project-five/index.html",
+    "precache-manifest.f058209c6ea3ba399c6b7587e34ef02d.js": "/project-five/precache-manifest.f058209c6ea3ba399c6b7587e34ef02d.js",
+    "service-worker.js": "/project-five/service-worker.js",
+    "static/css/main.2d0642b4.chunk.css.map": "/project-five/static/css/main.2d0642b4.chunk.css.map",
+    "static/js/2.caa6f99e.chunk.js.LICENSE.txt": "/project-five/static/js/2.caa6f99e.chunk.js.LICENSE.txt",
+    "static/media/header1.jpg": "/project-five/static/media/header1.08f1750b.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6164fd9a.js",
-    "static/js/2.c3ce47c9.chunk.js",
-    "static/css/main.905c6a55.chunk.css",
-    "static/js/main.51de1896.chunk.js"
+    "static/js/runtime-main.61e38702.js",
+    "static/js/2.caa6f99e.chunk.js",
+    "static/css/main.2d0642b4.chunk.css",
+    "static/js/main.fe2ec1e6.chunk.js"
   ]
 }
