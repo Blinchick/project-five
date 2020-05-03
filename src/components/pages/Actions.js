@@ -11,7 +11,7 @@ function Actions(props) {
 
     return (
         <React.Fragment>
-            <button onClick={deletePost}>DELETE</button>
+            <button onClick={deletePost}>X</button>
         </React.Fragment>
     )
 }

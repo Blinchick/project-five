@@ -50,11 +50,11 @@ export class AllPosts extends Component {
             <div>
                 {this.state.allPosts.map((post) => {
                     return (
-                        <section>
-                            <p>{post.title} by {post.writer}</p>
+                        <div className="post">
+                            <p><strong>{post.title}</strong> by <strong>{post.writer}</strong></p>
                             <p>{post.postscript}</p>
-                                <Actions post={post}/>
-                        </section>
+                            <Actions post={post}/>
+                        </div>
                     )
                 })}
             </div>

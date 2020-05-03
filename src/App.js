@@ -23,7 +23,9 @@ class App extends Component {
               </section>
             )} />
             <Route path="/addpost" component={AddPost} />
-            <Route path="/allposts" component={AllPosts} />
+            <section className="wrapper allPosts">
+              <Route path="/allposts" component={AllPosts} />
+            </section>
             </main>
           </div>
         </div>
