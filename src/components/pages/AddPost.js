@@ -42,20 +42,19 @@ export class AddPost extends Component {
             postscript: this.state.postscript
         });
 
-        //clearing state
+        //clearing input
         this.setState({
             title: "",
             writer: "",
-            publisher: "",
-            genre: ""
+            postscript:""
         })
         
     }
 
     render() {
         return (
-            <section>
-                <h2>Here you can create PostScript</h2>
+            <section className="wrapper addPost">
+                <h2>Leave your PostScript</h2>
                     <form action="" onSubmit={this.handleSubmit}>
                         <label htmlFor="title">Title</label>
                         <input
@@ -76,16 +75,18 @@ export class AddPost extends Component {
                             required
                         />
 
-                    <textarea
-                        name="postscript"
-                        cols="30"
-                        rows="5"
-                        onChange={this.handleChange}
-                        value={this.state.postscript}
-                    >
-                    </textarea>
+                        <label htmlFor="postscript">Your Postscript</label>
+                        <textarea
+                            name="postscript"
+                            cols="50"
+                            rows="20"
+                            onChange={this.handleChange}
+                            value={this.state.postscript}
+                            required
+                        >
+                        </textarea>
 
-                        <input type="Submit"/>
+                        <button type="submit">Submit</button>
                     </form>
             </section>
         )

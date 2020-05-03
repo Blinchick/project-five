@@ -15,11 +15,11 @@ class App extends Component {
             <Header />
             <main>
             <Route exact path="/" render={props => (
-              <section>
-                <h1>Hello hello hello</h1>
+              <section className="home wrapper">
+                <h2>Hello there</h2>
                 <p>If you like to read, you probably have many things to say about books. Either you have strong opinion about character, story or just want to save your favourite quote - epilogue is here for you! </p>
                 <p>It's online book diary created for book lovers.</p>
-                <p>"A reader lives a thousand lives before he dies. The man who never reads lives only one."</p>
+                <blockquote>"A reader lives a thousand lives before he dies. The man who never reads lives only one."</blockquote>
               </section>
             )} />
             <Route path="/addpost" component={AddPost} />
